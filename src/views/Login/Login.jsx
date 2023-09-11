@@ -43,7 +43,7 @@ const Login = props => {
                 setTimeout(() => {
                     message.success('登录成功!')
                     props.history.push('/')
-                }, 2000)
+                }, 1000)
             }
         })
     }

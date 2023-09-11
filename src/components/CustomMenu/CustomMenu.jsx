@@ -83,7 +83,7 @@ const CustomMenu = props => {
     return (
         <Menu
             mode='inline'
-            theme='dark'
+            // theme='dark'
             openKeys={openKeys}
             selectedKeys={selectedKeys}
             onClick={({ key }) => setstate(prevState => ({ ...prevState, selectedKeys: [key] }))}

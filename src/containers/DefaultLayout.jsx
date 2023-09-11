@@ -2,14 +2,14 @@ import React, { useState, useEffect, useReducer } from 'react'
 import { Route, Switch, Redirect, withRouter } from 'react-router-dom'
 import { Layout, BackTop, message } from 'antd'
 import routes from '@/routes'
-import echarts from 'echarts/lib/echarts'
-import avatar from '@/assets/images/user.jpg'
+// import echarts from 'echarts/lib/echarts'
+// import avatar from '@/assets/images/user.jpg'
 import menus from './menu'
 import '@/style/layout.scss'
-
-import AppHeader from './AppHeader.jsx'
 import AppAside from './AppAside.jsx'
-import AppFooter from './AppFooter.jsx'
+
+// import AppHeader from './AppHeader.jsx'
+// import AppFooter from './AppFooter.jsx'
 
 const { Content } = Layout
 
@@ -65,13 +65,13 @@ const DefaultLayout = props => {
 
         // 菜单收缩展开时 echarts 图表的自适应
         if (pathname === '/' || pathname === '/index') {
-            timer = setTimeout(() => {
-                echarts.init(document.getElementById('bar')).resize()
-                echarts.init(document.getElementById('line')).resize()
-                echarts.init(document.getElementById('pie')).resize()
-                echarts.init(document.getElementById('pictorialBar')).resize()
-                echarts.init(document.getElementById('scatter')).resize()
-            }, 500)
+            // timer = setTimeout(() => {
+            //     echarts.init(document.getElementById('bar')).resize()
+            //     echarts.init(document.getElementById('line')).resize()
+            //     echarts.init(document.getElementById('pie')).resize()
+            //     echarts.init(document.getElementById('pictorialBar')).resize()
+            //     echarts.init(document.getElementById('scatter')).resize()
+            // }, 1500)
         } else {
             timer = null
         }
@@ -83,9 +83,9 @@ const DefaultLayout = props => {
     return (
         <Layout className='app'>
             <BackTop />
-            <AppAside menuToggle={state.menuToggle} menu={menu} />
+            <AppAside menuToggle={state.menuToggle} menu={menu} loginOut={loginOut} />
             <Layout style={{ marginLeft: state.menuToggle ? '80px' : '200px', minHeight: '100vh' }}>
-                <AppHeader menuToggle={state.menuToggle} menuClick={menuClick} avatar={avatar} loginOut={loginOut} />
+                {/* <AppHeader menuToggle={state.menuToggle} menuClick={menuClick} avatar={avatar} loginOut={loginOut} /> */}
                 <Content className='content'>
                     <Switch>
                         {routes.map(item => {
@@ -109,7 +109,7 @@ const DefaultLayout = props => {
                         <Redirect to='/404' />
                     </Switch>
                 </Content>
-                <AppFooter />
+                {/* <AppFooter /> */}
             </Layout>
         </Layout>
     )

@@ -1,6 +1,17 @@
+/*
+ * @Author: SunLin
+ * @Date: 2023-08-31 14:40:05
+ * @LastEditors: SunLin
+ * @LastEditTime: 2023-09-11 11:48:41
+ * @Description:
+ */
 import loadable from '@/utils/loadable'
 
 const Index = loadable(() => import(/* webpackChunkName: 'index' */ '@/views/Index'))
+
+// 数据记录库
+const DataHistory = loadable(() => import('@/views/dataState/dataHistory/index'))
+const DataLabel = loadable(() => import('@/views/dataState/dataLabel/index'))
 
 // 通用
 const ButtonView = loadable(() => import(/* webpackChunkName: 'button' */ '@/views/PublicView/Button'))
@@ -32,6 +43,8 @@ const About = loadable(() => import(/* webpackChunkName: 'about' */ '@/views/Abo
 
 const routes = [
     { path: '/index', exact: true, name: 'Index', component: Index, auth: [1] },
+    { path: '/dataState/dataHistory', exact: false, name: '数据记录', component: DataHistory, auth: [1] },
+    { path: '/dataState/dataLabel', exact: false, name: '数据标注', component: DataLabel, auth: [1] },
     { path: '/public/button', exact: false, name: '按钮', component: ButtonView, auth: [1] },
     { path: '/public/icon', exact: false, name: '图标', component: IconView, auth: [1] },
     { path: '/nav/dropdown', exact: false, name: '下拉菜单', component: DropdownView },

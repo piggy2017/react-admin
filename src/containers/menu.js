@@ -1,3 +1,10 @@
+/*
+ * @Author: SunLin
+ * @Date: 2023-08-31 14:40:05
+ * @LastEditors: SunLin
+ * @LastEditTime: 2023-09-01 11:12:42
+ * @Description:
+ */
 const menu = [
     {
         key: '/index',
@@ -6,11 +13,24 @@ const menu = [
         auth: [1]
     },
     {
+        title: '数据记录库',
+        key: '/dataState',
+        icon: 'ordered-list',
+        auth: [1],
+        subs: [
+            { title: '数据记录', key: '/dataState/dataHistory', icon: '' },
+            { title: '数据标注', key: '/dataState/dataLabel', icon: '' }
+        ]
+    },
+    {
         title: '通用',
         key: '/public',
         icon: 'appstore',
         auth: [1],
-        subs: [{ title: '按钮', key: '/public/button', icon: '' }, { title: '图标', key: '/public/icon', icon: '' }]
+        subs: [
+            { title: '按钮', key: '/public/button', icon: '' },
+            { title: '图标', key: '/public/icon', icon: '' }
+        ]
     },
     {
         title: '导航',

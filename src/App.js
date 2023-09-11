@@ -1,3 +1,10 @@
+/*
+ * @Author: SunLin
+ * @Date: 2023-08-31 14:40:05
+ * @LastEditors: SunLin
+ * @LastEditTime: 2023-09-01 11:16:38
+ * @Description:
+ */
 import React from 'react'
 import { HashRouter as Router, Route, Switch, Redirect } from 'react-router-dom'
 import loadable from './utils/loadable'
@@ -16,7 +23,7 @@ const Login = loadable(() => import(/* webpackChunkName: 'login' */ './views/Log
 const App = () => (
     <Router>
         <Switch>
-            <Route path='/' exact render={() => <Redirect to='/index' />} />
+            <Route path='/' exact render={() => <Redirect to='/dataState/dataHistory' />} />
             <Route path='/500' component={View500} />
             <Route path='/login' component={Login} />
             <Route path='/404' component={View404} />
